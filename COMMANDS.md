@@ -16,7 +16,7 @@
 
 ### Creating a Django app
 - `python3 manage.py startapp app_name`
-
+- 
 ---
 
 ### Create Views
@@ -47,3 +47,19 @@ Here we are giving the hello_world/views.py file an alias of index_views. In a o
 
 ### Testing our app
 - Always make sure to always **save all your files** before running the project. You can also take this opportunity to git add, commit and push your work.
+- Open a browser window by returning to the terminal tab and running the Django server `python3 manage.py runserver`. Now you can see the text Hello, world! in the browser.
+
+---
+
+### Key files in project folder:
+The top level in Django is a project. A project is like a container for everything we want to do. By default, the project contains a settings file and some other administrative files.
+- Key files to note are: **manage.py**, **settings.py**, and **urls.py**.
+- **settings.py**: this file contains the project-wide settings, such as installed apps and database connection information, among other things.
+- **manage.py**: this file is in the root directory, above the project folder. It is used to create apps, run our project and perform some database operations.
+---
+
+### Key files in apps folder:
+Inside the project, we create apps. An app’s structure is like a Python package with multiple Python modules within a directory. They’re the things that actually do something, such as a blog, a to-do list, or a poll. A project can contain many, many apps. You could do everything you want with just one app, but for maintainability and good design practices, it is better to separate different functionality into different apps.
+- Key files to note are: **models.py**, **views.py**.
+- **models.py**: our database models are stored here, which define the structure of the database used by our app.
+- **views.py**: this file contains the view code for our app. 
