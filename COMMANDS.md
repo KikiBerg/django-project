@@ -105,3 +105,12 @@ Inside the project, we create apps. An app’s structure is like a Python packag
 - Recreate requirements.txt file: `pip3 freeze --local > requirements.txt` or `pip freeze >> requirements.txt`
 - *Note 1: The packages in requirements.txt are listed alphabetically. The most recently installed package is not always at the end.*
 - *Note 2: The requirements.txt file is an important part of the deployment. After each new package is installed, recreate the file.*
+
+---
+
+### Good habits
+
++ Deploy early and regurarly
++ Add, commit and push to Github often
++ Recreate **requirements.txt** file after every new package
++ Always switch **DEBUG** to **False** before deploying
