@@ -56,9 +56,17 @@ Here we are giving the hello_world/views.py file an alias of index_views. In a o
 The top level in Django is a project. A project is like a container for everything we want to do. By default, the project contains a settings file and some other administrative files.
 - Key files to note are: **manage.py**, **settings.py**, and **urls.py**.
 
-- **manage.py**: this file is in the root directory, above the project folder. It is used to create apps, run our project and perform some database operations.
-- **settings.py**: this file contains the project-wide settings, such as installed apps and database connection information, among other things.
-- **urls.py**: This file defines how URLs in the Django project map to specific views in the apps. It essentially acts as a routing table, directing users to the appropriate view functions based on the URL they request. The imported views from the apps are responsible for handling user requests and generating the appropriate responses.
+1. **manage.py**: this file is in the root directory, above the project folder. It is used to create apps, run our project and perform some database operations.
+
+2. **settings.py**: this file contains the project-wide settings, such as installed apps and database connection information, among other things.
+
+* Key settings in settings.py:
+  * `ALLOWED_HOSTS`: Determines which host or server names the project can run on.
+  * `SECRET_KEY`: Defines an encryption key for leaving a virtual signature.
+  * `INSTALLED_APPS`: Provides a list of applications that are enabled for this Django installation.
+  * `DEBUG`: Allows for the extended, yellow error messages to be displayed.
+
+3. **urls.py**: This file defines how URLs in the Django project map to specific views in the apps. It essentially acts as a routing table, directing users to the appropriate view functions based on the URL they request. The imported views from the apps are responsible for handling user requests and generating the appropriate responses.
 
 ---
 
@@ -87,3 +95,13 @@ Inside the project, we create apps. An app’s structure is like a Python packag
 - git add .
 - git commit -m "..."
 - git push
+
+---
+
+### requirements.txt
+- Check Django version: `django-admin version`
+- See the installed packages: `pip3 list`
+- Install whitenoise: `pip3 install whitenoise~=6.5.0`
+- Recreate requirements.txt file: `pip3 freeze --local > requirements.txt` or `pip freeze >> requirements.txt`
+- *Note 1: The packages in requirements.txt are listed alphabetically. The most recently installed package is not always at the end.*
+- *Note 2: The requirements.txt file is an important part of the deployment. After each new package is installed, recreate the file.*
