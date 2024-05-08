@@ -73,11 +73,10 @@ Inside the project, we create apps. An app’s structure is like a Python packag
 ### Update code for deployment:
 - Install a production-ready webserver for Heroku: `pip3 install gunicorn~=20.1`
 - Add gunicorn==20.1.0 to the requirements.txt file: `pip3 freeze --local > requirements.txt`
-
 *Note: gunicorn is a production equivalent of the manage.py runserver used in development but with speed and security optimisation.*
 
 - Create a file named **Procfile** at the root directory of the project (same directory as requirements.txt).
-The Procfile has no file extension.
+*Note: The Procfile has no file extension.*
 - In the Procfile, declare this is a web process followed by the command to execute your Django project: `web: gunicorn my_project.wsgi`. *Note: This assumes your project is named my_project.*
 - Note the **space** after the colon.
 
@@ -85,4 +84,6 @@ The Procfile has no file extension.
 
 - Open the my_project/settings.py file and replace DEBUG=True with DEBUG=False
 - Also, in settings.py we need to append the Heroku hostname to the ALLOWED_HOSTS list, in addition to the local host: `,'.herokuapp.com'` *Note: Remember the comma and the dot before herokuapp.*
-- git add, git commit -m "...", git push
+- git add .
+- git commit -m "..."
+- git push
